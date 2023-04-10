@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-
+import ExpenseForm from './componets/ExpenseForm'
 import Expense from './componets/Expense'
 import ExpenseFilter from './componets/ExpenseFilter'
 //import Item from './componets/Item'
@@ -49,13 +49,14 @@ const deleteItem =(index:number)=>{
     <div className="text-center">
       <h3>Expense tracker</h3>
     </div>
-  
+   
     <h2 className="text-center">Expenses</h2>
-    <div className="col-md-10 offset-1 mb-3">
+    <div className="col-md-6 offset-3 mb-3">
+    <ExpenseForm/>
     <ExpenseFilter onSelectedCategory={category =>setSelectedCategory(category)}/>
     </div>
     
-    <div className="col-md-10 offset-1">
+    <div className="col-md-6 offset-3">
     <Expense expenses={visibleExpenses } onDelete={onDelete}/>
     </div>
      
